@@ -60,7 +60,7 @@ photologo = 'https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236
 photoyt = 'https://tinypic.host/images/2025/03/18/YouTube-Logo.wine.png' #https://envs.sh/GVi.jpg
 photocp = 'https://tinypic.host/images/2025/03/28/IMG_20250328_133126.jpg'
 photozip = 'https://envs.sh/cD_.jpg'
-
+proxy = "http://abhi:ABHI@139.59.29.156:3128" 
 
 # Inline keyboard for start command
 BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="📞 Contact", url="https://t.me/saini_contact_bot")]])
@@ -1511,7 +1511,7 @@ async def text_handler(bot: Client, m: Message):
                 ytf = f"b[height<={raw_text2}]/bv[height<={raw_text2}]+ba/b/bv+ba"
            
             if "jw-prod" in url:
-                cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
+                cmd = f'yt-dlp --proxy "{proxy}" -o "{name}.mp4" "{url}"'
             elif "webvideos.classplusapp." in url:
                cmd = f'yt-dlp --add-header "referer:https://web.classplusapp.com/" --add-header "x-cdn-tag:empty" -f "{ytf}" "{url}" -o "{name}.mp4"'
             elif "youtube.com" in url or "youtu.be" in url:
